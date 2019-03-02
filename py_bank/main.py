@@ -1,19 +1,10 @@
 #PyBank
-#Analyse financial records of the company
-#Datafile is budget_data.csv
-#Columns are Date and Profit/Losses
-#The total number of months included in the dataset
-#The net total amount of "Profit/Losses" over the entire period
-#The average of the changes in "Profit/Losses" over the entire period
-#The greatest increase in profits (date and amount) over the entire period
-#The greatest decrease in losses (date and amount) over the entire period
-#Save the datafile 
 
 #Import modules
 import os
 import csv
 
-# #Locate the file
+# Locate the file
 csvpath = "C:/Users/kapali_s/Documents/SMU/Homeworks/Assignment_3/python-challenge-2/py_bank/budget_data.csv"
 
 #Open the file 
@@ -28,7 +19,9 @@ with open (csvpath, newline = "" ) as csvfile:
     
     #count the rows
     row_count = len(num_rows)
-        
+
+    print("Financial Analysis")    
+    print("------------------------------------------------")
     print("Total Months : " + str(row_count))
 
   #The net total amount of "Profit/Losses" over the entire period
@@ -39,14 +32,14 @@ with open (csvpath, newline = "" ) as csvfile:
         total_PL += int(row[1])
         #print(row[1])
              
-    print(total_PL)
+    print("Total : " +"$" + str(total_PL))
 
 #The average of the changes in "Profit/Losses" over the entire period
     PL_average = total_PL / row_count
-
-    print(PL_average)
-        #average_change = average(row[1])
-        #print(average_change)
+    print("Average Change : " + "$" + str(round(PL_average)),2)
+       
+    # average_change = average(row[1])
+    # print("Average Change : " + str(average_change))
 
 #The greatest increase in profits (date and amount) over the entire period
     #Go to row 3
@@ -69,20 +62,21 @@ with open (csvpath, newline = "" ) as csvfile:
 
         #Get max value
     max_value = max(repeat)
-    print("Greatest Increase in Profits: " + str(max_value))
-
+    
     maxPLvalue = repeat.index(max_value) + 1
-    #print(maxPLvalue)
-    print(num_rows[maxPLvalue][0])
-  
+    
+    print("Greatest Increase in Profits: " + num_rows[maxPLvalue][0] + "  " + "(" + str(max_value) + ")")
 
-
+#Get min value
+    min_value = min(repeat)
+    
+    minPLvalue = repeat.index(min_value) + 1
+    
+    print("Greatest Decrease in Profits: " + num_rows[minPLvalue][0] + "  " + "(" + str(min_value) + ")")
 
 
     
 
 
 
-        
-#The greatest decrease in losses (date and amount) over the entire period
   
