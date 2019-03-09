@@ -1,0 +1,8 @@
+C:\Users\kapali_s>c:\Users\kapali_s\Documents\SMU\Homeworks\Assignment_3\python-challenge-2\py_bank\main.py
+Financial Analysis
+------------------------------------------------
+Total Months : 86
+Total : $38382578
+Average Change : $446309 2
+Greatest Increase in Profits: Feb-2012  (1926159)
+Greatest Decrease in Profits: Sep-2013  (-2196167)
